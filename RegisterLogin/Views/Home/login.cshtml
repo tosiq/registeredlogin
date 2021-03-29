@@ -1,0 +1,46 @@
+﻿@model RegisterLogin.Models.the_user
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>login</h2>
+
+<fieldset>
+    <legend>login</legend>
+    @using (Html.BeginForm("login", "Home", FormMethod.Post))
+    {
+
+
+        <table class="table table-bordered">
+            
+            <tr>
+                <td>Email:</td>
+                <td>  @Html.TextBoxFor(a => a.email, new { type = "email", required = "required", @class = "form-control", placeholder = "Email is" })</td>
+            </tr>
+
+
+
+
+            <tr>
+                <td>Password:</td>
+                <td>  @Html.TextBoxFor(a => a.password, new { type = "password", required = "required", @class = "form-control", placeholder = "Password is" })</td>
+            </tr>
+
+      
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="login" class="btn btn-success" />
+                </td>
+            </tr>
+
+
+
+
+        </table>
+        <a href="@Url.Action("Index","Home")">If still not  registered go to registered page</a>
+
+    }
+
+
+</fieldset>

@@ -1,0 +1,83 @@
+﻿@model RegisterLogin.Models.the_user
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<fieldset>
+    <legend>Register</legend>
+    @using(Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+
+   
+        <table class="table table-bordered">
+    <tr>
+   <td>Name:</td>
+  <td>  @Html.TextBoxFor(a => a.name, new { required = "required", @class = "form-control", placeholder = "Name is" })</td>
+  </tr>
+
+  <tr>
+ <td>Password:</td>
+  <td>  @Html.TextBoxFor(a => a.password, new {type="password", required = "required", @class = "form-control", placeholder = "Password is" })</td>
+  </tr>
+
+ <tr>
+ <td>Email:</td>
+  <td>  @Html.TextBoxFor(a => a.email, new {type="email", required = "required", @class = "form-control", placeholder = "Email is" })</td>
+  </tr>
+
+
+  <tr>
+  <td>Age:</td>
+   <td>  @Html.TextBoxFor(a => a.age, new { required = "required", @class = "form-control", placeholder = "age is" })</td>
+  </tr>
+
+   <tr>
+  <td>Phone Number:</td>
+  <td>  @Html.TextBoxFor(a => a.cellphone, new { required = "required", @class = "form-control", placeholder = "Phone Number is" })</td>
+  </tr>
+
+
+<tr>
+    <td>Gender:</td>
+    <td>
+        Male:
+        @Html.RadioButtonFor(a=> a.gender,"Male")
+        Female:
+        @Html.RadioButtonFor(a => a.gender, "Female")
+    </td>
+
+</tr>
+
+            <tr>
+
+                <td>Role</td>
+                <td>
+                <select class="form-control" name="role" required>
+                        <option value="">--------Select your Role------------</option>
+                        <option value="admin">Admin</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="student">Student</option>
+
+             </select>
+             </td>
+            </tr>
+
+
+            <tr>
+            <td colspan="2">
+            <input type="submit" value="register" class="btn btn-success" />
+            </td>
+            </tr>
+
+
+
+
+  </table>
+  <a href="@Url.Action("login","Home")">If already registered go to Login</a>
+
+    }
+
+
+</fieldset>
